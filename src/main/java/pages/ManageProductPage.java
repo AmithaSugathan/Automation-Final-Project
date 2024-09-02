@@ -21,7 +21,7 @@ public class ManageProductPage {
 	@FindBy(xpath="//button[@type='submit']")private WebElement siginButton;
 	
 	@FindBy(xpath="//a[contains(@href,'list-product') and @class='small-box-footer']")private WebElement manageProductMoreInfo;
-	// INCOMPLETE @FindBy(xpath="")private WebElement manageProductDeleteButton;
+	@FindBy(xpath="//a[contains(@href,'Product/delete') and @class='btn btn-sm btn btn-danger btncss'][1]")private WebElement manageProductDeleteButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")private WebElement manageProductDeletedAlert;
 	
 	public void enterUsernameInUsernameField(String username)
@@ -53,6 +53,7 @@ public class ManageProductPage {
 	{
 		driver.switchTo().alert().accept();
 	}
+	
 	public boolean isDeleteAlertDisplayed()
 	{
 		return manageProductDeletedAlert.isDisplayed();

@@ -53,7 +53,7 @@ public class ManageNewsPage {
 	
 	public void enterNews(String news)
 	{
-		clickNewsButton.sendKeys(news);
+		enterNewsField.sendKeys(news);
 	}
 	
 	public void clickNewsSaveButton()

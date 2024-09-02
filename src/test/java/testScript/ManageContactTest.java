@@ -12,29 +12,33 @@ import utilities.ExcelUtility;
 
 public class ManageContactTest extends Base{
 	
-	@Test
+	@Test(description="Verify that the user is able to Edit an Existing Contact in the Supermarket app")
 	
 	public void verifyUserIsAbleToEditContact() throws IOException
 	{
 		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginPage");
 		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginPage");
+		
 		String phoneNumberValue=ExcelUtility.getIntegerData(1, 0, "ManageContact");
-		String emailValue=ExcelUtility.getIntegerData(2, 0, "ManageContact");
-		String addressValue=ExcelUtility.getIntegerData(3, 0, "ManageContact");
-		String deliveryTimeValue=ExcelUtility.getIntegerData(4, 0, "ManageContact");
-		String deliveryChargeValue=ExcelUtility.getIntegerData(5, 0, "ManageContact");
+		String emailValue=ExcelUtility.getStringData(1, 1, "ManageContact");
+		String addressValue=ExcelUtility.getStringData(1, 2, "ManageContact");
+		String deliveryTimeValue=ExcelUtility.getIntegerData(1, 3, "ManageContact");
+		String deliveryChargeValue=ExcelUtility.getIntegerData(1, 4, "ManageContact");
+		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUsernameInUsernameField(usernameValue);
 		loginpage.enterPasswordInPasswordField(passwordValue);
 		loginpage.clickSigninButton();
 		
 		ManageContactPage managecontactpage=new ManageContactPage(driver);
+		managecontactpage.clickManageContactMoreInfo();
 		managecontactpage.clickmanageContactEditButton();
 		managecontactpage.manageContactPhoneNumberEdit(phoneNumberValue);
 		managecontactpage.manageContactEmailEdit(emailValue);
 		managecontactpage.manageContactAddressEdit(addressValue);
 		managecontactpage.manageContactDeliveryTimeEdit(deliveryTimeValue);
 		managecontactpage.manageContactDeliveryChargeLimit(deliveryChargeValue);
+		managecontactpage.clickManageContactUpdateButton();
 		boolean isContactUpdated=managecontactpage.isContactUpdateAlertDisplayed();
 		assertTrue(isContactUpdated,"Contact Details of the User is NOT Edited");
 	}

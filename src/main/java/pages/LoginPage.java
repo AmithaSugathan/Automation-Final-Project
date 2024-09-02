@@ -18,7 +18,8 @@ public class LoginPage {
 	@FindBy(xpath="//input[@name='username']")private WebElement usernameField;//locate elements with Page Factory
 	@FindBy(xpath="//input[@name='password']")private WebElement passwordField;
 	@FindBy(xpath="//button[@type='submit']")private WebElement siginButton;
-	@FindBy(xpath="//p[text()='Dashboard']")private WebElement dashboard;
+	@FindBy(xpath="//img[@class='img-circle']")private WebElement dashboardImage;
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")private WebElement invalidLoginAlert;
 	
 	
 	public void enterUsernameInUsernameField(String username)
@@ -38,7 +39,13 @@ public class LoginPage {
 	
 	public boolean isDasboardLoadedSuccessfully()
 	{
-		return dashboard.isDisplayed();//Return TRUE if dashboard is displayed
+		return dashboardImage.isDisplayed();//Return TRUE if dashboard is displayed
+	}
+
+	
+	public boolean isInvalidLoginAlertDisplayed()
+	{
+		return invalidLoginAlert.isDisplayed();//Return TRUE if dashboard is displayed
 	}
 
 }

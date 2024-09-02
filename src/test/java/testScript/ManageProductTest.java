@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class ManageProductTest extends Base{
 	
-	@Test
+	@Test(description="Verify that the user is able to Delete a Product from the Supermarket app")
 	
 	public void verifyUserCanDeleteProduct() throws IOException
 	{

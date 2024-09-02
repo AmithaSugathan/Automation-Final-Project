@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class ManageSubCategoryTest extends Base{
 	
-	@Test
+	@Test(description="Verify that the user is able to Change the Status of an Existing User of the Supermarket app")
 	
 	public void verifyUserIsAbleToChangeStatus() throws IOException
 	{

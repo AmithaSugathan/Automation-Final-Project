@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base{
 
-	@Test
+	@Test(description="Verify that the user is able to Add News into the Supermarket app")
 	
 	public void verifyUserCanCreateNews() throws IOException
 	{

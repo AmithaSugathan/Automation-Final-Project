@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class ManageContactPage {
 	
 	WebDriver driver;
@@ -83,7 +85,9 @@ public class ManageContactPage {
 	
 	public void clickManageContactUpdateButton()
 	{
-	manageContactUpdateButton.click();
+	//manageContactUpdateButton.click();
+		PageUtility pageutility=new PageUtility();
+		pageutility.javaScriptClick(driver, manageContactUpdateButton);
 	}
 	
 	public boolean isContactUpdateAlertDisplayed()

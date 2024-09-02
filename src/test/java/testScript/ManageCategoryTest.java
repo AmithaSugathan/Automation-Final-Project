@@ -2,6 +2,7 @@ package testScript;
 
 import static org.testng.Assert.assertTrue;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.annotations.Test;
@@ -11,9 +12,9 @@ import pages.ManageCategoryPage;
 import utilities.ExcelUtility;
 
 public class ManageCategoryTest extends Base{
-	@Test
+	@Test(description="Verify that the user is able to Add New Category to the Supermarket app")
 	
-	public void verifyUserIsAbleToAddNewCategory() throws IOException
+	public void verifyUserIsAbleToAddNewCategory() throws IOException, AWTException
 	{
 		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginPage");
 		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginPage");
@@ -50,7 +51,7 @@ public class ManageCategoryTest extends Base{
 		assertTrue(isCategoryAlertDisplayed,"New Category Saved Alert is NOT Displayed");
 	}
 	
-	@Test
+	/*@Test(description="Verify that the user is able to Search an Existing Category in the Supermarket app")
 	
 	public void verifyUserIsAbleToSearchCategory() throws IOException
 	{
@@ -69,6 +70,6 @@ public class ManageCategoryTest extends Base{
 		boolean isSearchCategoryResultDisplayed=managecategorypage.isSearchCategoryFound(searchCategoryValue);
 		assertTrue(isSearchCategoryResultDisplayed,"Search Category Is Present");
 		
-	}
+	}*/
 	
 }

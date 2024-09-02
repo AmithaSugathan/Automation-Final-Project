@@ -1,5 +1,6 @@
 package pages;
 
+import java.awt.AWTException;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -7,9 +8,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import constants.Constants;
+//import bsh.org.objectweb.asm.Constants;
+import utilities.FileUploadUtility;
+import utilities.PageUtility;
+
 public class ManageCategoryPage {
 
 	WebDriver driver;
+	
 
 	public ManageCategoryPage(WebDriver driver)
 	{
@@ -21,7 +28,7 @@ public class ManageCategoryPage {
 	@FindBy(xpath="//input[@name='password']")private WebElement passwordField;
 	@FindBy(xpath="//button[@type='submit']")private WebElement siginButton;
 	
-	@FindBy(xpath="//a[contains(@href,'list-product') and @class='small-box-footer']")private WebElement manageCategoryMoreInfo;
+	@FindBy(xpath="//a[contains(@href,'list-category') and @class='small-box-footer'][1]")private WebElement manageCategoryMoreInfo;
 	
 	//TO SAVE A CATEGORY
 	@FindBy(xpath="//a[@onclick='click_button(1)']")private WebElement manageCategoryNewButton;
@@ -80,9 +87,12 @@ public class ManageCategoryPage {
 		manageCategorySelectGroup.click();
 	}
 	
-	public void clickManageCategoryImageChooseFile()
+	public void clickManageCategoryImageChooseFile() throws AWTException
 	{
-		manageCategoryImageChooseFile.click();
+		//manageCategoryImageChooseFile.click();
+		FileUploadUtility fileuploadutility =new FileUploadUtility();
+		//fileuploadutility.fileuploadUsingRobertClass(manageCategoryImageChooseFile,Constants.GROCERYIMAGE);
+		fileuploadutility.fileUploadUsingSendKeys(manageCategoryImageChooseFile, Constants.GROCERYIMAGE);
 	}
 
 	public boolean isTopMenuYesRadioButtonDisplayed()
@@ -93,7 +103,9 @@ public class ManageCategoryPage {
 	
 	public void clickTopMenuYesRadioButton()
 	{
-		manageCategoryTopMenuYesRadioButton.click();
+		//manageCategoryTopMenuYesRadioButton.click();
+		PageUtility pageutility=new PageUtility();
+		pageutility.javaScriptClick(driver, manageCategoryTopMenuYesRadioButton);
 	}
 	
 	public boolean isTopMenuYesRadioButtonEnabled()
@@ -108,7 +120,9 @@ public class ManageCategoryPage {
 	}	
 	public void clickLeftMenuYesRadioButton()
 	{
-		manageCategoryLeftMenuYesRadioButton.click();
+		//manageCategoryLeftMenuYesRadioButton.click();
+		PageUtility pageutility=new PageUtility();
+		pageutility.javaScriptClick(driver, manageCategoryLeftMenuYesRadioButton);
 	}
 	
 	public boolean isLeftMenuYesRadioButtonEnabled()
@@ -118,7 +132,10 @@ public class ManageCategoryPage {
 	
 	public void clickManageCategorySaveButton()
 	{
-		manageCategorySaveButton.click();
+		//manageCategorySaveButton.click();
+		PageUtility pageutility=new PageUtility();
+		pageutility.javaScriptClick(driver, manageCategorySaveButton);
+		
 	}
 	public boolean isManageCategoryAlertDisplayed()
 	{
