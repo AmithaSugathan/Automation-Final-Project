@@ -84,6 +84,14 @@
         <artifactId>lombok</artifactId>
         <version>1.18.22</version>
 </dependency>
+
+<!--Faker Utility-->
+<dependency>
+    <groupId>com.github.javafaker</groupId>
+    <artifactId>javafaker</artifactId>
+    <version>0.16</version>
+</dependency>
+
   	
   </dependencies>
 </project>
