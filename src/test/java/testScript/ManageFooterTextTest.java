@@ -6,11 +6,17 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
+import pages.AdminUsersPage;
 import pages.LoginPage;
+import pages.ManageCategoryPage;
 import pages.ManageFooterTextPage;
 import utilities.ExcelUtility;
 
 public class ManageFooterTextTest extends Base{
+	public AdminUsersPage admin;
+	public LoginPage login;
+	public ManageCategoryPage category;
 
 	@Test(description="Verify that the User Is Able To Edit Details(Address,Phone & Email) of Footer Text Page")
 	public void verifyUserIsAbleToEditFooterTextDetails() throws IOException
@@ -22,9 +28,8 @@ public class ManageFooterTextTest extends Base{
 		String emailValue=ExcelUtility.getStringData(1, 1, "ManageFooter");
 		String phoneValue=ExcelUtility.getIntegerData(1, 2, "ManageFooter");
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUsernameInUsernameField(usernameValue);
-		loginpage.enterPasswordInPasswordField(passwordValue);
-		loginpage.clickSigninButton();
+		login=new LoginPage(driver);
+		admin=login.enterUsernameInUsernameField(usernameValue).enterPasswordInPasswordField(passwordValue).clickSigninButton();
 		
 		ManageFooterTextPage managefootertextpage=new ManageFooterTextPage(driver);
 		managefootertextpage.clickManageFooterMoreInfo();
@@ -32,9 +37,9 @@ public class ManageFooterTextTest extends Base{
 		managefootertextpage.enterAddress(addressValue);
 		managefootertextpage.enterEmail(emailValue);
 		managefootertextpage.enterPhoneNumber(phoneValue);
-		managefootertextpage.clickSigninButton();
+		managefootertextpage.clickUpdate();
 		boolean isupdateAlertDisplayed=managefootertextpage.isFooterTextUpdateAlertDisplayed();
-		assertTrue(isupdateAlertDisplayed,"Details of Footer Text Page are NOT Updated");
+		assertTrue(isupdateAlertDisplayed,Constants.FOOTERNOTUPDATED);
 		
 		
 		

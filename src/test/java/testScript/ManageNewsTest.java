@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
@@ -30,7 +31,7 @@ public class ManageNewsTest extends Base{
 		managenewspage.enterNews(newsValue);
 		managenewspage.clickNewsSaveButton();
 		boolean isNewsSaved=managenewspage.isNewsCreated();
-		assertTrue(isNewsSaved,"Latest News is not Saved");
+		assertTrue(isNewsSaved,Constants.NEWSNOTSAVED);
 	}
 	
 	

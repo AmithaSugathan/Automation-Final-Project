@@ -8,72 +8,60 @@ import org.openqa.selenium.support.PageFactory;
 public class ManageFooterTextPage {
 	WebDriver driver;
 
-	public ManageFooterTextPage(WebDriver driver)
-	{
+	public ManageFooterTextPage(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver,this);
+		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath="//input[@name='username']")private WebElement usernameField;
-	@FindBy(xpath="//input[@name='password']")private WebElement passwordField;
-	@FindBy(xpath="//button[@type='submit']")private WebElement siginButton;
-	
-	@FindBy(xpath="//a[contains(@href,'list-footertext') and @class='small-box-footer']")private WebElement manageFooterMoreInfo;
-	@FindBy(xpath="//a[contains(@href,'Footertext/edit') and @class='btn btn-sm btn btn-primary btncss'][1]")private WebElement manageFooterEditButton;
-	@FindBy(xpath="//textarea[@id='content']")private WebElement addressField;
-	@FindBy(xpath="//input[@id='email']")private WebElement emailField;
-	@FindBy(xpath="//input[@id='phone']")private WebElement phoneNumberField;
-	@FindBy(xpath="//button[@name='Update']")private WebElement updateButton;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")private WebElement updateAlertDisplayed;
-	
-	public void enterUsernameInUsernameField(String username)
-	{
-		usernameField.sendKeys(username);
-	}
-	
-	public void enterPasswordInPasswordField(String password)
-	{
-		passwordField.sendKeys(password);
-	}
-	
-	public void clickSigninButton()
-	{
-		siginButton.click();
-	}
-	
-	public void clickManageFooterMoreInfo()
-	{
+
+	@FindBy(xpath = "//a[contains(@href,'list-footertext') and @class='small-box-footer']")
+	private WebElement manageFooterMoreInfo;
+	@FindBy(xpath = "//a[contains(@href,'Footertext/edit') and @class='btn btn-sm btn btn-primary btncss'][1]")
+	private WebElement manageFooterEditButton;
+	@FindBy(xpath = "//textarea[@id='content']")
+	private WebElement addressField;
+	@FindBy(xpath = "//input[@id='email']")
+	private WebElement emailField;
+	@FindBy(xpath = "//input[@id='phone']")
+	private WebElement phoneNumberField;
+	@FindBy(xpath = "//button[@name='Update']")
+	private WebElement updateButton;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	private WebElement updateAlertDisplayed;
+
+	public ManageFooterTextPage clickManageFooterMoreInfo() {
 		manageFooterMoreInfo.click();
+		return this;
 	}
-	
-	public void clickManageFooterEditButton()
-	{
+
+	public ManageFooterTextPage clickManageFooterEditButton() {
 		manageFooterEditButton.click();
+		return this;
 	}
-	
-	public void enterAddress(String newAddress)
-	{
+
+	public ManageFooterTextPage enterAddress(String newAddress) {
 		addressField.clear();
 		addressField.sendKeys(newAddress);
+		return this;
 	}
-	
-	public void enterEmail(String email)
-	{
+
+	public ManageFooterTextPage enterEmail(String email) {
 		emailField.clear();
 		emailField.sendKeys(email);
+		return this;
 	}
-	
-	public void enterPhoneNumber(String phone)
-	{
+
+	public ManageFooterTextPage enterPhoneNumber(String phone) {
 		phoneNumberField.clear();
 		phoneNumberField.sendKeys(phone);
+		return this;
 	}
-	public void clickUpdate()
-	{
+
+	public ManageFooterTextPage clickUpdate() {
 		updateButton.click();
+		return this;
 	}
-	public boolean isFooterTextUpdateAlertDisplayed()
-	{
+
+	public boolean isFooterTextUpdateAlertDisplayed() {
 		return updateAlertDisplayed.isDisplayed();
 	}
 }

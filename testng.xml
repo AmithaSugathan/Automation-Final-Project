@@ -8,10 +8,16 @@
 
 <test name="Chrome Test" thread-count="5">
 	 <classes>
-       <class name="testScript.LoginTest">
-      <methods>
-		<include name="verifyTheUserIsAbleToLoginUsingValidCredentials"></include>
-	  </methods>
+       <!-- class name="testScript.LoginTest"> -->
+       <!-- class name="testScript.AdminUsersTest">-->
+       <class name="testScript.ManageContactTest">
+     <methods>
+		<!-- <include name="verifyTheUserIsAbleToLoginUsingValidCredentials"> -->
+		<!-- <include name="verifyUserCanCreateNewUserType"></include>-->
+		<!-- <include name="verifyUserCanEditExistingUserDetails"></include>--> 
+		 <include name="verifyUserIsAbleToEditContact"></include>
+		<!-- <exclude name="verifyUserCanChangeStatus"></exclude> -->
+	 </methods>
       </class>
     </classes>
     </test>

@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageSubCategoryPage;
 import utilities.ExcelUtility;
@@ -27,7 +28,7 @@ public class ManageSubCategoryTest extends Base{
 		managesubcategorypage.clickManageSubCategoryMoreInfo();
 		managesubcategorypage.clickManageSubCategoryStatusButton();
 		boolean isCategoryAlertDisplayed=managesubcategorypage.isCategoryStatusUpdated();
-		assertTrue(isCategoryAlertDisplayed,"Sub Category Status is NOT Updated");		
+		assertTrue(isCategoryAlertDisplayed,Constants.SUBCATNOTUPDATED);		
 		
 	}
 

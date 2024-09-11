@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageProductPage;
 import utilities.ExcelUtility;
@@ -28,7 +29,7 @@ public class ManageProductTest extends Base{
 		manageproductpage.clickManageProductDeleteIcon();
 		manageproductpage.clickManageProductDeleteOkButton();
 		boolean isProductDeleted=manageproductpage.isDeleteAlertDisplayed();
-		assertTrue(isProductDeleted,"The Selected Product is DELETED");
+		assertTrue(isProductDeleted,Constants.PRODDELETED);
 		
 	}
 	}

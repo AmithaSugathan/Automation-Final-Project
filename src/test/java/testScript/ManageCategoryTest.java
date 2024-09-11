@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
 import utilities.ExcelUtility;
@@ -48,7 +49,7 @@ public class ManageCategoryTest extends Base{
 		managecategorypage.clickManageCategorySaveButton();
 		
 		boolean isCategoryAlertDisplayed= managecategorypage.isManageCategoryAlertDisplayed();
-		assertTrue(isCategoryAlertDisplayed,"New Category Saved Alert is NOT Displayed");
+		assertTrue(isCategoryAlertDisplayed,Constants.NEWCATEGORYNOTSAVED);
 	}
 	
 	/*@Test(description="Verify that the user is able to Search an Existing Category in the Supermarket app")

@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-28T14:33:54 IST" name="Suite" finished-at="2024-08-28T14:34:15 IST" duration-ms="20369">
+  <suite started-at="2024-09-12T00:38:59 IST" name="Suite" finished-at="2024-09-12T00:39:10 IST" duration-ms="11491">
     <groups>
-      <group name="Regression">
-        <method signature="LoginTest.verifyTheUserIsAbleToLoginUsingValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginTest@5ddeb7cb]" name="verifyTheUserIsAbleToLoginUsingValidCredentials" class="testScript.LoginTest"/>
-      </group> <!-- Regression -->
-      <group name="Smoke">
-        <method signature="LoginTest.verifyTheUserIsAbleToLoginUsingInvalidUsername()[pri:0, instance:testScript.LoginTest@5ddeb7cb]" name="verifyTheUserIsAbleToLoginUsingInvalidUsername" class="testScript.LoginTest"/>
-      </group> <!-- Smoke -->
     </groups>
-    <test started-at="2024-08-28T14:33:54 IST" name="Chrome Test" finished-at="2024-08-28T14:34:15 IST" duration-ms="20369">
-      <class name="testScript.LoginTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:33:54 IST" name="initializeBrowser" finished-at="2024-08-28T14:33:57 IST" duration-ms="2771" status="PASS">
+    <test started-at="2024-09-12T00:38:59 IST" name="Chrome Test" finished-at="2024-09-12T00:39:10 IST" duration-ms="11491">
+      <class name="testScript.ManageContactTest">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.ManageContactTest@c05fddc]" started-at="2024-09-12T00:38:59 IST" name="initializeBrowser" finished-at="2024-09-12T00:39:06 IST" duration-ms="7137" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -24,140 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyTheUserIsAbleToLoginUsingInvalidPassword()[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:33:57 IST" name="verifyTheUserIsAbleToLoginUsingInvalidPassword" description="Verify that the user is able to login to the Supermarket app with Invalid Password" finished-at="2024-08-28T14:33:58 IST" duration-ms="1197" status="PASS">
+        <test-method signature="verifyUserIsAbleToEditContact()[pri:0, instance:testScript.ManageContactTest@c05fddc]" started-at="2024-09-12T00:39:06 IST" name="verifyUserIsAbleToEditContact" description="Verify that the user is able to Edit an Existing Contact in the Supermarket app" finished-at="2024-09-12T00:39:10 IST" duration-ms="3711" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyTheUserIsAbleToLoginUsingInvalidPassword -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:33:58 IST" name="browserQuit" finished-at="2024-08-28T14:33:59 IST" duration-ms="387" status="PASS">
+        </test-method> <!-- verifyUserIsAbleToEditContact -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.ManageContactTest@c05fddc]" started-at="2024-09-12T00:39:10 IST" name="browserQuit" finished-at="2024-09-12T00:39:10 IST" duration-ms="581" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyTheUserIsAbleToLoginUsingInvalidPassword status=SUCCESS method=LoginTest.verifyTheUserIsAbleToLoginUsingInvalidPassword()[pri:0, instance:testScript.LoginTest@5ddeb7cb] output={null}]]]>
+                <![CDATA[[TestResult name=verifyUserIsAbleToEditContact status=SUCCESS method=ManageContactTest.verifyUserIsAbleToEditContact()[pri:0, instance:testScript.ManageContactTest@c05fddc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserQuit -->
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:33:59 IST" name="initializeBrowser" finished-at="2024-08-28T14:34:01 IST" duration-ms="2461" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyTheUserIsAbleToLoginUsingInvalidUsername()[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:34:01 IST" name="verifyTheUserIsAbleToLoginUsingInvalidUsername" description="Verify that the user is able to login to the Supermarket app with Invalid Username" finished-at="2024-08-28T14:34:02 IST" duration-ms="614" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyTheUserIsAbleToLoginUsingInvalidUsername -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:34:02 IST" name="browserQuit" finished-at="2024-08-28T14:34:02 IST" duration-ms="369" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyTheUserIsAbleToLoginUsingInvalidUsername status=SUCCESS method=LoginTest.verifyTheUserIsAbleToLoginUsingInvalidUsername()[pri:0, instance:testScript.LoginTest@5ddeb7cb] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- browserQuit -->
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:34:02 IST" name="initializeBrowser" finished-at="2024-08-28T14:34:04 IST" duration-ms="2403" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyTheUserIsAbleToLoginUsingInvalidUsernameAndPassword()[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:34:04 IST" name="verifyTheUserIsAbleToLoginUsingInvalidUsernameAndPassword" description="Verify that the user is able to login to the Supermarket app with Invalid Username and Invalid Password" finished-at="2024-08-28T14:34:05 IST" duration-ms="970" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyTheUserIsAbleToLoginUsingInvalidUsernameAndPassword -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:34:05 IST" name="browserQuit" finished-at="2024-08-28T14:34:06 IST" duration-ms="382" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyTheUserIsAbleToLoginUsingInvalidUsernameAndPassword status=SUCCESS method=LoginTest.verifyTheUserIsAbleToLoginUsingInvalidUsernameAndPassword()[pri:0, instance:testScript.LoginTest@5ddeb7cb] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- browserQuit -->
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:34:06 IST" name="initializeBrowser" finished-at="2024-08-28T14:34:08 IST" duration-ms="2238" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyTheUserIsAbleToLoginUsingValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:34:08 IST" name="verifyTheUserIsAbleToLoginUsingValidCredentials" description="Verify that the user is able to login to the Supermarket app with Valid Username and Password" data-provider="LoginProvider" finished-at="2024-08-28T14:34:09 IST" duration-ms="963" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyTheUserIsAbleToLoginUsingValidCredentials -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@5ddeb7cb]" started-at="2024-08-28T14:34:09 IST" name="browserQuit" finished-at="2024-08-28T14:34:10 IST" duration-ms="389" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyTheUserIsAbleToLoginUsingValidCredentials status=SUCCESS method=LoginTest.verifyTheUserIsAbleToLoginUsingValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginTest@5ddeb7cb] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- browserQuit -->
-      </class> <!-- testScript.LoginTest -->
-      <class name="testScript.ManageFooterTextTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.ManageFooterTextTest@4f32a3ad]" started-at="2024-08-28T14:34:10 IST" name="initializeBrowser" finished-at="2024-08-28T14:34:12 IST" duration-ms="2183" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyUserIsAbleToEditFooterTextDetails()[pri:0, instance:testScript.ManageFooterTextTest@4f32a3ad]" started-at="2024-08-28T14:34:12 IST" name="verifyUserIsAbleToEditFooterTextDetails" description="Verify that the User Is Able To Edit Details(Address,Phone &amp; Email) of Footer Text Page" finished-at="2024-08-28T14:34:14 IST" duration-ms="2262" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserIsAbleToEditFooterTextDetails -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testScript.ManageFooterTextTest@4f32a3ad]" started-at="2024-08-28T14:34:14 IST" name="browserQuit" finished-at="2024-08-28T14:34:15 IST" duration-ms="452" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserIsAbleToEditFooterTextDetails status=SUCCESS method=ManageFooterTextTest.verifyUserIsAbleToEditFooterTextDetails()[pri:0, instance:testScript.ManageFooterTextTest@4f32a3ad] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- browserQuit -->
-      </class> <!-- testScript.ManageFooterTextTest -->
+      </class> <!-- testScript.ManageContactTest -->
     </test> <!-- Chrome Test -->
   </suite> <!-- Suite -->
 </testng-results>

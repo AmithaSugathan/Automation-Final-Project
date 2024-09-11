@@ -60,7 +60,7 @@ public class Base {
 		
 		//driver.get("https://groceryapp.uniqassosiates.com/admin");
 		driver.get(properties.getProperty("url"));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));//Global:Applicable for the entire framework
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));//Implicit Wait in Base Class. Global:Applicable for the entire framework
 		driver.manage().window().maximize();
 	}
 	

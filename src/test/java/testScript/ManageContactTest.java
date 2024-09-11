@@ -6,12 +6,19 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
+import pages.AdminUsersPage;
 import pages.LoginPage;
 import pages.ManageContactPage;
+import pages.ManageFooterTextPage;
 import utilities.ExcelUtility;
 
 public class ManageContactTest extends Base{
-	
+	public LoginPage login;
+	public AdminUsersPage admin;
+	public ManageContactPage contact;
+	public ManageFooterTextPage footer;
+		
 	@Test(description="Verify that the user is able to Edit an Existing Contact in the Supermarket app")
 	
 	public void verifyUserIsAbleToEditContact() throws IOException
@@ -25,22 +32,14 @@ public class ManageContactTest extends Base{
 		String deliveryTimeValue=ExcelUtility.getIntegerData(1, 3, "ManageContact");
 		String deliveryChargeValue=ExcelUtility.getIntegerData(1, 4, "ManageContact");
 		
-		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUsernameInUsernameField(usernameValue);
-		loginpage.enterPasswordInPasswordField(passwordValue);
-		loginpage.clickSigninButton();
-		
-		ManageContactPage managecontactpage=new ManageContactPage(driver);
-		managecontactpage.clickManageContactMoreInfo();
-		managecontactpage.clickmanageContactEditButton();
-		managecontactpage.manageContactPhoneNumberEdit(phoneNumberValue);
-		managecontactpage.manageContactEmailEdit(emailValue);
-		managecontactpage.manageContactAddressEdit(addressValue);
-		managecontactpage.manageContactDeliveryTimeEdit(deliveryTimeValue);
-		managecontactpage.manageContactDeliveryChargeLimit(deliveryChargeValue);
-		managecontactpage.clickManageContactUpdateButton();
-		boolean isContactUpdated=managecontactpage.isContactUpdateAlertDisplayed();
-		assertTrue(isContactUpdated,"Contact Details of the User is NOT Edited");
+		login=new LoginPage(driver);
+		login.enterUsernameInUsernameField(usernameValue).enterPasswordInPasswordField(passwordValue);
+		admin=login.clickSigninButton();
+		contact=login.clickManageContactMoreInfo();
+		footer=contact.clickmanageContactEditButton().manageContactPhoneNumberEdit(phoneNumberValue).manageContactEmailEdit(emailValue).manageContactAddressEdit(addressValue).manageContactDeliveryTimeEdit(deliveryTimeValue).manageContactDeliveryChargeLimit(deliveryChargeValue).clickManageContactUpdateButton();
+				
+		boolean isContactUpdated=contact.isContactUpdateAlertDisplayed();
+		assertTrue(isContactUpdated,Constants.CONTACTNOTEDITED);
 	}
 
 }

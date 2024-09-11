@@ -7,84 +7,67 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.AdminUsersPage;
 import pages.LoginPage;
+import pages.ManageCategoryPage;
+import pages.ManageContactPage;
 import utilities.ExcelUtility;
 
 public class AdminUsersTest extends Base {
-	
-	@Test(description="Verify that the user is able to login to the Supermarket app with Valid Username and Password")
-	
-	public void verifyUserCanCreateNewUserType() throws IOException
-	{
-		
-			String usernameValue=ExcelUtility.getStringData(1, 0, "LoginPage");
-			String passwordValue=ExcelUtility.getStringData(1, 1, "LoginPage");
-			String newUserNameValue=ExcelUtility.getStringData(1, 0, "AdminUsers");
-			String newUserPasswordValue=ExcelUtility.getStringData(1, 1, "AdminUsers");
-			LoginPage loginpage=new LoginPage(driver);
-			loginpage.enterUsernameInUsernameField(usernameValue);
-			loginpage.enterPasswordInPasswordField(passwordValue);
-			loginpage.clickSigninButton();
-			
-			AdminUsersPage adminuserspage=new AdminUsersPage(driver);
-			adminuserspage.clickAdminUsersMoreInfo();
-			adminuserspage.clickNewUserButton();
-			adminuserspage.enterNewUsername(newUserNameValue);
-			adminuserspage.enterNewUserPassword(newUserPasswordValue);
-			adminuserspage.selectNewUserTypeDropDown();
-			adminuserspage.clickNewUserSaveButton();
-			boolean isNewUserSaved=adminuserspage.isNewUserCreated();
-			assertTrue(isNewUserSaved,"The New User is not SAVED");
+	public AdminUsersPage admin;
+	public LoginPage login;
+	public ManageContactPage contact;
+
+	@Test(description = "Verify that the user is able to create a new user into the Supermarket app")
+
+	public void verifyUserCanCreateNewUserType() throws IOException {
+
+		String usernameValue = ExcelUtility.getStringData(1, 0, "LoginPage");
+		String passwordValue = ExcelUtility.getStringData(1, 1, "LoginPage");
+		String newUserNameValue = ExcelUtility.getStringData(1, 0, "AdminUsers");
+		String newUserPasswordValue = ExcelUtility.getStringData(1, 1, "AdminUsers");
+		login = new LoginPage(driver);
+		admin = login.enterUsernameInUsernameField(usernameValue).enterPasswordInPasswordField(passwordValue)
+				.clickSigninButton();
+		contact = admin.clickAdminUsersMoreInfo().clickNewUserButton().enterNewUsername(newUserNameValue)
+				.enterNewUserPassword(newUserPasswordValue).selectNewUserTypeDropDown().clickNewUserSaveButton();
+		boolean isNewUserSaved = admin.isNewUserCreated();
+		assertTrue(isNewUserSaved, Constants.NEWUSERNOTSAVED);
 	}
-	
-	@Test (description="Verify that the user is able to login to the Supermarket app with Valid Username and Password")
-	
-	
-	public void verifyUserCanEditExistingUserDetails() throws IOException
-	{
-		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginPage");
-		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginPage");
-		String editUserNameValue=ExcelUtility.getStringData(1, 2, "AdminUsers");
-		String editPasswordValue=ExcelUtility.getStringData(1, 3, "AdminUsers");
-		
-		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUsernameInUsernameField(usernameValue);
-		loginpage.enterPasswordInPasswordField(passwordValue);
-		loginpage.clickSigninButton();
-		
-		AdminUsersPage adminuserspage=new AdminUsersPage(driver);
-		adminuserspage.clickAdminUsersMoreInfo();
-		adminuserspage.clickUserEditButton();		
-		adminuserspage.userNameEdit(editUserNameValue);
-		adminuserspage.userPasswordEdit(editPasswordValue);
-		adminuserspage.selectUserTypeEditDropDown();
-		adminuserspage.clickUserTypeUpdateButton();
-		boolean isUserTypeUpdated=adminuserspage.isUserTypeUpdateAlertDisplayed();
-		assertTrue(isUserTypeUpdated,"Details of the User Is NOT Updated");
-		
+
+	@Test(description = "Verify that the user is able to edit existing user details in the Supermarket app")
+
+	public void verifyUserCanEditExistingUserDetails() throws IOException {
+		String usernameValue = ExcelUtility.getStringData(1, 0, "LoginPage");
+		String passwordValue = ExcelUtility.getStringData(1, 1, "LoginPage");
+		String editUserNameValue = ExcelUtility.getStringData(1, 2, "AdminUsers");
+		String editPasswordValue = ExcelUtility.getStringData(1, 3, "AdminUsers");
+		login = new LoginPage(driver);
+		admin = login.enterUsernameInUsernameField(usernameValue).enterPasswordInPasswordField(passwordValue)
+				.clickSigninButton();
+		admin.clickAdminUsersMoreInfo().clickUserEditButton().userNameEdit(editUserNameValue)
+				.userPasswordEdit(editPasswordValue).selectUserTypeEditDropDown().clickUserTypeUpdateButton();
+		boolean isUserTypeUpdated = admin.isUserTypeUpdateAlertDisplayed();
+		assertTrue(isUserTypeUpdated, Constants.USERNOTUPDATED);
+
 	}
-	
-	@Test
-	
-	public void verifyUserCanChangeStatus() throws IOException
-	{
-		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginPage");
-		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginPage");
-		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUsernameInUsernameField(usernameValue);
-		loginpage.enterPasswordInPasswordField(passwordValue);
-		loginpage.clickSigninButton();
-		
-		AdminUsersPage adminuserspage=new AdminUsersPage(driver);
+
+	@Test(description = "Verify that the user is able to update status of a user in the Supermarket app")
+
+	public void verifyUserCanChangeStatus() throws IOException {
+		String usernameValue = ExcelUtility.getStringData(1, 0, "LoginPage");
+		String passwordValue = ExcelUtility.getStringData(1, 1, "LoginPage");
+		login = new LoginPage(driver);
+		admin = login.enterUsernameInUsernameField(usernameValue).enterPasswordInPasswordField(passwordValue)
+				.clickSigninButton();
+		AdminUsersPage adminuserspage = new AdminUsersPage(driver);
 		adminuserspage.clickAdminUsersMoreInfo();
-		String oldStatus=adminuserspage.userOldStatus();
+		String oldStatus = adminuserspage.userOldStatus();
 		adminuserspage.clickUserTypeStatusUpdateButton();
-		String newStatus=adminuserspage.userNewStatus();
-		assertEquals(oldStatus,newStatus,"Status of the User is NOT Updated");
-		
-		
-		
+		String newStatus = adminuserspage.userNewStatus();
+		assertEquals(oldStatus, newStatus, Constants.USERSTATUSNOTUPDATED);
+
 	}
 
 }
